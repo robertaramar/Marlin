@@ -26,7 +26,7 @@
 
 #include <stdint.h>
 
-#define STM32_NOT_EXTENDED_ISO10646_1_5X7
+//#define STM32_NOT_EXTENDED_ISO10646_1_5X7
 
 #if ENABLED(STM32_NOT_EXTENDED_ISO10646_1_5X7)
   // reduced font (only symbols 1 - 127) - saves about 1278 bytes of FLASH
