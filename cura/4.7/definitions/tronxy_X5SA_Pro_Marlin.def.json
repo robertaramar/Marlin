@@ -1,0 +1,34 @@
+{
+    "name": "Tronxy X5SA Pro (Marlin)",
+    "version": 2,
+    "inherits": "tronxy_base",
+    "overrides": {
+        "machine_name": { "default_value": "Tronxy X5SA Pro (Marlin)" },
+        "machine_start_gcode": { "default_value": "; X5SA Pro Start Code\nG21 ; set units to millimeters\nG90 ; use absolute positioning\nM82 ; absolute extrusion mode\nM140 S{material_bed_temperature_layer_0} ; set bed temp\nM104 S{material_print_temperature_layer_0} ; set extruder temp\nM190 S{material_bed_temperature_layer_0} ; wait for bed temp\nM109 S{material_print_temperature_layer_0} ; wait for extruder temp\nG28 ; home all\nG0 Z5 ; move Z to 5mm\nG0 Z0.4; move Z to 0.4mm\nG92 E0.0 ; reset extruder distance position\nG0 X30 Y30 F1500; Move to rearward left corner (50,50)\nG1 X100.0 E9.0 F1000.0 ; intro line\nG1 X150.0 E21.5 F1000.0 ; intro line\nG92 E0.0 ; reset extruder distance position" },
+        "machine_end_gcode": { "default_value": "M104 S0 ; Hotend off\nM140 S0 ; Bed off\nM106 S0 ; Fan off\nG91 ; relative positioning\nG1 E-1 F300 ; retract 1mm\nG1 Z+0.5 E-5 X-20 Y-20 F3000.00 ; Bed down 0.5, retract 5mm, X-20, Y-20\nG28 X0 Y0 ; home X and Y\nG1 Z200 F1500; Move Z 200mm down\nG90 ; absolute positioning" },
+        "machine_width": { "default_value": 330 },
+        "machine_depth": { "default_value": 330 },
+        "machine_height": { "default_value": 400 },
+        "machine_head_polygon": { "default_value": [
+                [-26, 34],
+                [-26, -32],
+                [22, -32],
+                [22, 34]
+            ]
+        },
+        "machine_head_with_fans_polygon": { "default_value": [
+                [-26, 34],
+                [-26, -32],
+                [32, -32],
+                [32, 34]
+            ]
+        },
+        "gantry_height": { "value": 25 },
+        "speed_print": { "value": 60.0 }
+    },
+    "metadata": {
+        "quality_definition": "tronxy_base",
+        "visible": true,
+		"platform": "x5s_bed.stl"
+    }
+}
